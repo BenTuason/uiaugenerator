@@ -1,44 +1,75 @@
-uiaui-image-generator{
+@media (max-width: 768px) {
+    .search-box {
+        width: auto; /* Allow the box to adjust its width to the screen size */
+        margin: 20px; /* Add some margin around the box */
+    }
+
+    .search-input,
+    .generate-btn {
+        width: auto; /* Allow the children to fill the .search-box */
+    }
+}
+
+
+.uiaui-image-generator {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centers children (like .search-box) horizontally */
+    justify-content: center; /* Centers children vertically if the container's height is defined */
     margin: auto;
-    align-items: center;
     margin-top: 80px;
     margin-bottom: 20px;
     gap: 30px;
+}
+
+.description{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.instructions{
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .header{
     font-size: 70px;
     font-weight: 500;
     padding-bottom: 30px;
+    color: "#cb7f72";
 
 }
 
 .header span{
-    color: #DE1B89;
+    color: #a39da3;
     font-weight: 600;
 }
 
 .img-loading{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
-.img-loading img{
-    width: 512px
-}
-
-.search-box{
+.img-loading {
     display: flex;
-    width: 1000px;
-    height: 90px;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 50px;
-    background: #1F3540;
+    flex-direction: column;
+    align-items: center; /* This will center the image in the .img-loading container */
+    justify-content: center; /* This centers the content vertically if there's extra space */
 }
 
+.search-box {
+    display: flex;
+    justify-content: space-between; /* This will push the input and button to the edges */
+    align-items: center; /* Center children vertically */
+    width: 1000px;
+    max-width: 90%; /* Adjust the width to prevent overflow on smaller screens */
+    height: 90px;
+    margin: 0 auto; /* This centers the .search-box itself horizontally */
+    border-radius: 50px;
+    background: #885c4d;
+    padding: 0 20px; /* Maintain padding on the left and right */
+
+}
 .search-input{
     width: 600px;
     height: 50px;
@@ -49,6 +80,8 @@ uiaui-image-generator{
     color: white;
     padding-left: 35px;
     padding-right: 35px;
+    flex-grow: 1;
+    margin-right: 20px;
 }
 
 .search-input::placeholder{
@@ -59,31 +92,39 @@ uiaui-image-generator{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 400px;
     height: 85px;
     font-size: 20px;
     border-radius: 50px;
-    background-color: #DE1B89;
+    background-color: #ae9da3;
     cursor: pointer;
+    margin-left: 20px
 }
 
-.loading-bar{
-    width: 0px;
+.loading-bar,
+.loading-bar-full {
     height: 8px;
-    background: #DE1B89;
+    background: #c5b8c0;
 }
 
-.loading-text{
+.loading-text {
+    position: absolute; /* Position the text absolutely */
     font-size: 18px;
+    color: white; /* Change the text color to white for visibility */
 }
 
-.loading-bar-full{
-    width: 512px;
-    height: 8px;
-    background: #DE1B89;
-    transition: 15s;
+.loading-bar-full {
+    width: 100%; /* Make the loading bar full width when loading */
+    transition: width 15s ease-in-out; /* Animate the width change */
 }
 
+.loading {
+    width: 100%; /* Set width to the full width of the container */
+    display: flex;
+    justify-content: center; /* Center the loading bar horizontally */
+    align-items: center; /* Center the loading text vertically */
+    margin-top: 20px; /* Add some space above the loading bar */
+}
 
 .display-none{
     display: none;
