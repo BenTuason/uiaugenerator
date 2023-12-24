@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './imageGenerator.css';
-import default_image from '../assets/default_image.svg';
+import default_image from '../assets/uiaui.jpg';
 
 const ImageGenerator = () => {
     const [image_url, setImage_url] = useState("/");
